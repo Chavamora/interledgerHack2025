@@ -3,7 +3,7 @@ import { THEME } from '../../lib/theme';
 import { Link } from 'expo-router';
 import { Button } from '@/components/ui/button';
 import { Text } from '@/components/ui/text';
-import { Loader2 } from 'lucide-react-native';
+import { Loader2, Edit2, Check, X } from 'lucide-react-native';
 import { View } from 'react-native';
 import { Icon } from '@/components/ui/icon';
 
@@ -227,13 +227,16 @@ export default function ProfilePage() {
           {!editing && (
             <Button
               variant="outline"
+              size="lg"
               onPress={() => startEdit()}
+              className="items-center"
               style={{ borderColor: palette.secondary }}>
+              <Icon as={Edit2} size={18} className="text-secondary-foreground" />
               <Text>Editar</Text>
             </Button>
           )}
           {editing && (
-            <Button variant="ghost" onPress={saveChanges} disabled={saving}>
+            <Button variant="ghost" size="lg" onPress={saveChanges} disabled={saving}>
               {saving ? (
                 <>
                   <View className="pointer-events-none animate-spin">
@@ -242,16 +245,21 @@ export default function ProfilePage() {
                   <Text>Guardando...</Text>
                 </>
               ) : (
-                'Guardar'
+                <>
+                  <Icon as={Check} size={18} className="text-primary-foreground" />
+                  <Text>Guardar</Text>
+                </>
               )}
             </Button>
           )}
           {editing && (
             <Button
               variant="outline"
+              size="lg"
               onPress={cancelEdit}
               disabled={saving}
               style={{ borderColor: palette.secondary }}>
+              <Icon as={X} size={18} className="text-secondary-foreground" />
               <Text>Cancelar</Text>
             </Button>
           )}
@@ -465,14 +473,16 @@ export default function ProfilePage() {
                 {!editing && (
                   <Button
                     variant="outline"
+                    size="lg"
                     onPress={() => startEdit()}
                     style={{ borderColor: palette.secondary }}>
+                    <Icon as={Edit2} size={16} className="text-secondary-foreground" />
                     <Text>Editar</Text>
                   </Button>
                 )}
                 {editing && (
                   <>
-                    <Button variant="ghost" onPress={saveChanges} disabled={saving}>
+                    <Button variant="ghost" size="lg" onPress={saveChanges} disabled={saving}>
                       {saving ? (
                         <>
                           <View className="pointer-events-none animate-spin">
@@ -481,14 +491,19 @@ export default function ProfilePage() {
                           <Text>Guardando...</Text>
                         </>
                       ) : (
-                        'Guardar'
+                        <>
+                          <Icon as={Check} size={16} className="text-primary-foreground" />
+                          <Text>Guardar</Text>
+                        </>
                       )}
                     </Button>
                     <Button
                       variant="outline"
+                      size="lg"
                       onPress={cancelEdit}
                       disabled={saving}
                       style={{ borderColor: palette.secondary }}>
+                      <Icon as={X} size={16} className="text-secondary-foreground" />
                       <Text>Cancelar</Text>
                     </Button>
                   </>
