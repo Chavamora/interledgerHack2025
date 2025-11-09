@@ -4,55 +4,84 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 63%;
+   /* Light theme variables mapped from the new palette (swapped):
+     background: #CBF3BB
+     card/highlight: #ECF4E8
+     secondary/titles: #ABE7B2
+     foreground/text: #93BFC7
+   */
+   --background: 103 70% 84%; /* #CBF3BB */
+   --foreground: 189 32% 68%; /* #93BFC7 */
+   --card: 101 35% 93%; /* #ECF4E8 */
+   --card-foreground: 189 32% 68%; /* #93BFC7 */
+   --popover: 101 35% 93%; /* #ECF4E8 */
+   --popover-foreground: 189 32% 68%; /* #93BFC7 */
+   --primary: 101 35% 93%; /* #ECF4E8 */
+   --primary-foreground: 189 32% 68%; /* #93BFC7 */
+  --secondary: 129 31% 57%; /* #6FB379 (darker) */
+  --secondary-foreground: 189 32% 68%; /* #93BFC7 */
+  --muted: 129 31% 57%; /* #6FB379 (darker) */
+  --muted-foreground: 189 32% 68%; /* #93BFC7 */
+   --accent: 101 35% 93%; /* #ECF4E8 */
+   --accent-foreground: 189 32% 68%; /* #93BFC7 */
+   --destructive: 0 84.2% 60.2%;
+   --border: 101 35% 93%; /* #ECF4E8 */
+   --input: 103 70% 84%; /* #CBF3BB */
+   --ring: 127 56% 79%; /* #ABE7B2 */
     --radius: 0.625rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 103 70% 84%;
+    --chart-2: 101 35% 93%;
+    --chart-3: 127 56% 79%;
+    --chart-4: 189 32% 68%;
+    --chart-5: 103 70% 84%;
+    /* Additional semantic variables */
+    --success: 140 56% 78%; /* #9FE2B7 */
+    --success-foreground: 140 74% 17%; /* #0B4F2A */
+    --info: 190 28% 72%; /* #93C7D1 */
+    --info-foreground: 195 66% 18%; /* #083744 */
+    --warning: 40 100% 70%; /* #FFD580 */
+    --warning-foreground: 36 100% 24%; /* #7A4900 */
+    --surface: 120 100% 98%; /* #F7FFF7 */
+    --surface-foreground: 165 80% 13%; /* #073022 */
+    --neutral: 170 8% 63%; /* #8FA7A2 */
+    --neutral-foreground: 170 68% 17%; /* #08302D */
   }
 
   .dark:root {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
+    /* Dark mode counterparts derived from the palette for contrast */
+    --background: 101 12% 9%;   /* deep green-teal background */
+    --foreground: 0 0% 98%;     /* near-white text for contrast */
+    --card: 101 18% 14%;
     --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
+    --popover: 101 18% 14%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+    --primary: 101 22% 18%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 101 24% 20%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --muted: 101 24% 20%;
+    --muted-foreground: 0 0% 98%;
+    --accent: 101 18% 14%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 70.9% 59.4%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 300 0% 45%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 101 18% 14%;
+    --input: 101 12% 9%;
+    --ring: 101 24% 20%;
+    --chart-1: 101 22% 18%;
+    --chart-2: 101 12% 9%;
+    --chart-3: 101 24% 20%;
+    --chart-4: 189 32% 68%;
+    --chart-5: 101 18% 14%;
+    /* Dark semantic variables */
+    --success: 137 64% 30%; /* #1E7A3A */
+    --success-foreground: 101 35% 93%; /* #ECF4E8 */
+    --info: 194 46% 24%; /* #2A6B78 */
+    --info-foreground: 101 35% 93%; /* #ECF4E8 */
+    --warning: 40 80% 30%; /* #B27A00 */
+    --warning-foreground: 101 35% 93%; /* #ECF4E8 */
+    --surface: 150 40% 8%; /* #0B2A20 */
+    --surface-foreground: 101 35% 93%; /* #ECF4E8 */
+    --neutral: 175 15% 30%; /* #4C6A66 */
+    --neutral-foreground: 101 35% 93%; /* #ECF4E8 */
   }
 }
