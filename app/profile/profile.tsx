@@ -121,14 +121,15 @@ export default function ProfilePage() {
     const mock: ProfileData = {
       user: {
         id: 'u_001',
-        firstName: 'María',
-        lastName: 'García',
-        email: 'maria.garcia@example.com',
-        school: 'Universidad Complutense de Madrid',
-        studentEmail: 'm.garcia@student.ucm.es',
-        phone: '+34 600 123 456',
-        address: 'Calle Falsa 123, Madrid, España',
-        avatarUrl: 'https://i.pinimg.com/736x/3f/ee/c8/3feec84e4e3d356fd59dd99bea0bea56.jpg',
+        firstName: 'Betito',
+        lastName: 'Juanes',
+        email: 'betito.juanes@gmail.com',
+        school: '',
+        studentEmail: '',
+        phone: '+52 55 4433 2211',
+        address: 'Calle Manolia, Ciudad de México, México',
+        avatarUrl:
+          'https://www.sdpnoticias.com/resizer/v2/NUZRPWHUFVDXPL6ESDJFUO4CZE.jpg?focal=459%2C194&auth=41246e9e0032f61b509c382e8e8f55cee98ed72073cd0a567b9d78945c03f125&width=640&height=360',
       },
     };
 
