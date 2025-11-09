@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Return to App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      text-align: center; 
+      padding: 20px; 
+      background-color: #f4f4f4; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+    }
+    .container { 
+      background-color: #fff; 
+      border-radius: 8px; 
+      padding: 30px; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+    }
+    h1 { color: #333; margin-top: 0; }
+    p { color: #555; font-size: 1.1em; line-height: 1.5; }
+    a { 
+      display: inline-block; 
+      padding: 15px 30px; 
+      margin-top: 20px; 
+      background: #007aff; 
+      color: white; 
+      font-weight: bold; 
+      text-decoration: none; 
+      border-radius: 8px; 
+      font-size: 1.2em;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const interact_ref = params.get('interact_ref');
+        const hash = params.get('hash');
+
+        if (!interact_ref || !hash) {
+          throw new Error('Parámetros de callback inválidos.');
+        }
+
+        // 1. Construye el deep link
+        const deepLink = `my-app://payment/callback?interact_ref=${interact_ref}&hash=${hash}`;
+        
+        // 2. En lugar de redirigir, asigna el link al botón
+        const link = document.getElementById('return-link');
+        link.href = deepLink;
+
+      } catch (e) {
+        console.error(e);
+        document.getElementById('message').innerText = `Error: ${e.message}`;
+        document.getElementById('details').innerText = 'Por favor, regresa a la app manualmente.';
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1 id="message">¡Ya casi!</h1>
+    <p id="details">Haz clic en el botón para regresar a tu aplicación y finalizar el pago.</p>
+    
+    <a id="return-link" href="#">
+      Volver a la App
+    </a>
+  </div>
+</body>
+</html>
